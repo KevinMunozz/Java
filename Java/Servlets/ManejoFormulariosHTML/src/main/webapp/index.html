@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio Formulario</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="recursos/estilos.css"/>
+        <script type="text/javascript" src="recursos/funciones.js"></script>
+    </head>
+    <body>
+        <form name="form1" action="/ManejoFormulariosHTML/Servlet" method="post"
+              onsubmit="return validarForma(this)">
+            <input type="hidden" name="oculto" value="valorOculto"></input>
+            <table width="200" id="enfasis-columna" >
+                <caption><!<!-- titulo de la tabla -->
+                    Formulario Registro de Datos
+                </caption>
+                <tr><!-- Es un fila dentro de una tabña -->
+                    <td class="columna"><!-- celda de datos en una fila -->
+                        Usuario: (*)
+                    </td>
+                    <td>
+                        <input class="default" type="texto" name="usuario"
+                               value="Escribir usuario" onfocus="this.select()"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Password: (*)
+                    </td>
+                    <td>
+                        <input class="default" type="password" name="password" 
+                               onfocus="this.select()"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Tegnologias de internet: (*)
+                    </td>
+                    <td>
+                        <!-- cuando ponemos el mismo name se pueden seleccionar varias 
+                        opciones. Del lado del servior sera un arreglo con las opciones
+                        seleccionadas-->
+                        Java<input type="checkbox" name="tecnologia" value="java"/>
+                        &nbsp;&nbsp;&nbsp;
+                        .Net<input type="checkbox" name="tecnologia" value="net"/>
+                        &nbsp;&nbsp;&nbsp;
+                        Php<input type="checkbox" name="tecnologia" value="php"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Genero: (*)
+                    </td>
+                    <td>
+                        <!-- cuando usamos el tipo radio solo se puede seleccionar
+                        una de las opciones. Pero en el lado del servidor tambien
+                        sera un arreglo ya que hay mas de un elemento con ese name-->
+                        Hombre<input type="radio" name="genero" value="H"/>
+                        &nbsp;&nbsp;&nbsp;
+                        Mujer<input type="radio" name="genero" value="M">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Ocupacion: (*)
+                    </td>
+                    <td>
+                        <select name="ocupacion" class="default">
+                            <option value="">Seleccionar</option>
+                            <option value="1">Profesor</option>
+                            <option value="2">Ingeniero</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Musica Favorita:
+                    </td>
+                    <td>
+                        <select name="musica" multiple class="default">
+                            <option value="rock">Rock</option>
+                            <option value="pop">Pop</option>
+                            <option value="salsa">Salsa</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Comentario:
+                    </td>
+                    <td>
+                        <textarea name="comentarios" cols="30" rows="2"
+                                  class="default" 
+                                  onfocus="this.select()"
+                                  placeholder="Ingresa tu comentario"></textarea>
+
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td>
+                        <input type="reset" value="Limpiar" class="default"/>
+                    </td>
+                    <td>
+                        <input type="submit" value="Enviar" class="default"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
